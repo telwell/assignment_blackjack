@@ -1,0 +1,29 @@
+<h1>
+  Time for some blackjack!
+</h1>
+<form class="reset_button" action="/new_game">
+	<input type="submit" value="New Game">
+</form>
+
+<div class="dealer">
+	<p>
+		Dealer showing: <%= @dealer.all_cards %>
+	</p>
+
+	<p class="bold">
+		Dealer total: <%= @dealer.hand_value %>
+	</p>
+</div>
+
+<div class="player">
+	<p>
+		Player has: <%= @player.cards_string %>
+	</p>
+	<p class="bold">
+		Total of: <%= @player.hand_value %>
+	</p>
+</div>
+
+<h2 class="green">
+	<%= message %>
+</h2>

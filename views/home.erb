@@ -16,6 +16,17 @@
 		Player has: <%= @player.cards_string %>
 	</p>
 	<p class="bold">
-		Total of: <%= @player.cards_sum %>
+		Total of: <%= @player.hand_value %>
 	</p>
+
+	<% if player_bust == true %>
+		<h2 class="red">Sorry, you busted. You lose!</h2>
+	<% else %>
+		<form class="player_hit" action="/hit">
+			<input type="submit" value="Hit">
+		</form>
+		<form class="player_stay" action="/stay">
+			<input type="submit" value="Stay">
+		</form>
+	<% end %>
 </div>

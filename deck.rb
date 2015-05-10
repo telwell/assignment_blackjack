@@ -20,6 +20,7 @@ class Deck
 		final_deck.flatten
 	end
 
+	# Make it REAL random
 	def shuffle_deck
 		10.times {@deck = @deck.shuffle}
 	end
@@ -27,6 +28,4 @@ class Deck
 	def deal_card
 		@deck.pop
 	end
-
-
 end
