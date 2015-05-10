@@ -27,3 +27,8 @@ get '/' do
   save_state
   erb :home
 end
+
+get '/new_game' do
+	session.clear
+	redirect to('/')
+end

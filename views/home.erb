@@ -1,6 +1,9 @@
 <h1>
   Time for some blackjack!
 </h1>
+<form class="reset_button" action="/new_game">
+	<input type="submit" value="New Game">
+</form>
 
 <div class="dealer">
 	<p>Dealer showing: 
@@ -9,7 +12,10 @@
 </div>
 
 <div class="player">
-	<p>Player has: 
-		<%= @player.cards_string %>
+	<p>
+		Player has: <%= @player.cards_string %>
+	</p>
+	<p class="bold">
+		Total of: <%= @player.cards_sum %>
 	</p>
 </div>

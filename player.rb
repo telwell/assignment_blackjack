@@ -16,6 +16,25 @@ class Player
 	def cards_string
 		@cards.join('-')
 	end
+
+	def cards_sum
+		# Break out into a different method if there's an Ace
+		cards_sum_with_ace if cards.any?{|card| card == "A"}
+		sum = []
+		cards.each do |card|
+			if card.is_a? (Fixnum)
+				sum << card
+			else
+				sum << 10
+			end
+		end
+		sum.inject{|sum, el| sum + el}
+	end
+
+	# Simple helper to see if a card is an ace.
+	def is_ace?(card)
+		card == "A" ? true : false
+	end
 end
 
 class Dealer < Player
